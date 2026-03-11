@@ -1,0 +1,4 @@
+﻿doc_id,title,vendor,product_line,doc_type,version,publish_date,file_name,page_count,trust_level
+nvidia_gpu_debug_r560,NVIDIA GPU Debug Guidelines,NVIDIA,Data Center GPUs,Troubleshooting,r560,2024-11-13,GPU_Debug_Guidelines.pdf,19,authoritative
+dell_poweredge_troubleshooting,Dell PowerEdge Server Troubleshooting Guide,Dell,PowerEdge Servers,Troubleshooting,A11,2018-11,servertroubleshootingguide_en.pdf,132,authoritative
+dell_poweredge_bios_uefi,Dell PowerEdge BIOS and UEFI Reference Guide,Dell,PowerEdge Servers,Configuration,NA,2020,poweredge-r940_owners-manual2_en-us.pdf,28,authoritative

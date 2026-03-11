@@ -1,0 +1,56 @@
+import streamlit as st
+import requests
+
+API_URL = "http://127.0.0.1:8000/ask"
+
+st.set_page_config(
+    page_title="Hardware Debug Assistant",
+    page_icon="🛠️",
+    layout="wide"
+)
+
+st.title("🛠️ Hardware Debug Assistant")
+st.caption("Domain-specific troubleshooting assistant for NVIDIA GPUs and Dell PowerEdge servers")
+
+question = st.text_input("Ask a debugging question")
+
+if st.button("Ask"):
+    if not question.strip():
+        st.warning("Please enter a question.")
+    else:
+        with st.spinner("Searching manuals..."):
+            response = requests.post(
+                API_URL,
+                json={"question": question},
+                timeout=60
+            )
+
+        if response.status_code != 200:
+            st.error("API error")
+        else:
+            data = response.json()
+
+            if data["decision"] == "refuse":
+                st.error("❌ Not enough evidence in indexed manuals")
+                st.write(data["reason"])
+                st.info(data["suggestion"])
+            else:
+                st.success("✅ Answer")
+
+                st.markdown(data["answer"])
+
+                st.divider()
+                st.subheader("Sources")
+
+                for c in data["citations"]:
+                    st.markdown(
+                        f"""
+**{c['vendor']} — {c['doc_id']}**
+
+Section: {c['section_title']}  
+Pages: {c['page_start']} - {c['page_end']}  
+Chunk: `{c['chunk_id']}`  
+Score: {round(c['score'], 3)}
+"""
+                    )
+                    st.divider()

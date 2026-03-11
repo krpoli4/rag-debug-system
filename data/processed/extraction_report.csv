@@ -1,0 +1,4 @@
+doc_id,file_name,status,pages_extracted,empty_pages_under_30_chars,notes
+nvidia_gpu_debug_r560,GPU_Debug_Guidelines.pdf,ok,20,2,
+dell_poweredge_troubleshooting,servertroubleshootingguide_en.pdf,ok,132,0,
+dell_poweredge_bios_uefi,poweredge-r940_owners-manual2_en-us.pdf,ok,28,0,

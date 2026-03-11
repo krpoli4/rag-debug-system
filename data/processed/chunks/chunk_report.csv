@@ -1,0 +1,4 @@
+doc_id,pages,chunks_total,prose_chunks,table_chunks,pages_with_tables,pages_with_section_title,avg_chunk_chars,min_chunk_chars,max_chunk_chars
+nvidia_gpu_debug_r560,20,14,14,0,0,15,1597.7,121,3500
+dell_poweredge_troubleshooting,132,145,145,0,0,131,2227.8,146,3500
+dell_poweredge_bios_uefi,28,30,30,0,0,27,2174.4,252,3500
